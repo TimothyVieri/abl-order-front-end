@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -44,5 +45,9 @@ class Order extends Model
     {
         return $this->hasMany(OrderPackage::class, 'order_id');
     }
+    
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class, 'reservasi_id');
+    }
 }
-
