@@ -35,7 +35,7 @@
                 </div>
                 <div>
                     <h2 class="text-sm text-slate-400 uppercase tracking-wider">Order Date</h2>
-                    <p class="text-lg font-bold text-white">{{ $order->created_at->format('d M Y') }}</p>
+                    <p class="text-lg font-bold text-white">{{ $order->created_at ? $order->created_at->format('d M Y') : '-' }}</p>
                 </div>
                 <div>
                     <h2 class="text-sm text-slate-400 uppercase tracking-wider">Order Type</h2>

@@ -7,15 +7,6 @@ use Illuminate\Support\Facades\Http;
 
 class OrderDetailController extends Controller
 {
-    public function index()
-    {
-        $response = Http::get('http://localhost:8000/order-details');
-        $orderDetails = $response->json();
-
-        return view('order.order_detail', compact('orderDetails'));
-    }
-
-
     public function store(Request $request)
     {
         $response = Http::post('http://localhost:8000/order-details', [
