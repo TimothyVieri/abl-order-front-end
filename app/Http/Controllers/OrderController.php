@@ -65,4 +65,14 @@ class OrderController extends Controller
             return back()->with('error', 'Failed to place order. Please try again. Error: ' . $e->getMessage());
         }
     }
+
+    public function show(Order $order)
+    {
+        // Menggunakan "Eager Loading" untuk memuat relasi agar lebih efisien
+        // dan menghindari N+1 problem.
+        $order->load('orderDetails.menu');
+
+        // Mengirim data pesanan ke view
+        return view('order.order_detail', compact('order'));
+    }
 }
