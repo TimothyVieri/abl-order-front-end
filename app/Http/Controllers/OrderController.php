@@ -38,8 +38,6 @@ class OrderController extends Controller
 
             // Buat order utama
             $order = Order::create([
-                // Menggunakan ID pengguna default (misal: 1 untuk Guest)
-                // Pastikan ada user dengan id=1 di database Anda.
                 'user_id' => 1,
                 'order_type' => $validated['order_type'],
                 'total_payment' => $validated['total_payment'],

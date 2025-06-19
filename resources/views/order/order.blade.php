@@ -1,12 +1,5 @@
 @extends('layout.base')
 
-{{--
-    Asumsi:
-    1. Anda memiliki layout utama di `resources/views/layout/base.blade.php`.
-    2. Controller mengirimkan variabel `$menuCategories` ke view ini.
-       $menuCategories = App\Models\Menu::all()->groupBy('category');
---}}
-
 @section('styles')
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
