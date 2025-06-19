@@ -19,7 +19,8 @@ class OrderPackageSeeder extends Seeder
             DB::table('order_packages')->insert([
                 [
                     'order_id' => $order->order_id,
-                    'menu_id' => $kungPao->menu_id,
+                    'menu_package_id' => $kungPao->menu_id,
+                    'chef_id' => 1,
                     'quantity' => 2,
                     'note' => 'Birthday package',
                     'status' => 'pending',

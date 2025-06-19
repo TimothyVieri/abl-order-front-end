@@ -11,6 +11,7 @@ return new class extends Migration
             $table->id('menu_id');
             $table->string('name');
             $table->string('category'); // e.g., 'Main Course', 'Drink'
+            $table->unsignedBigInteger('menu_package_id')->nullable();
             $table->text('description')->nullable();
             $table->integer('price');
             $table->string('image_path')->nullable(); // To store image URL

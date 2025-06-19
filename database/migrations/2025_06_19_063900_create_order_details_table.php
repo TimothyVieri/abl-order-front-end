@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id('order_detail_id');
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('menu_id');
+            $table->unsignedBigInteger('chef_id')->nullable();
             $table->integer('quantity');
             $table->string('note')->nullable();
             $table->enum('status', ['pending', 'preparing', 'ready', 'served', 'cancelled'])->default('pending');

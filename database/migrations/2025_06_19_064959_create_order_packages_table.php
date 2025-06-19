@@ -10,7 +10,8 @@ return new class extends Migration
         Schema::create('order_packages', function (Blueprint $table) {
             $table->id('order_package_id');
             $table->unsignedBigInteger('order_id');
-            $table->unsignedBigInteger('menu_id'); // Assuming a package is composed of menu items
+            $table->unsignedBigInteger('menu_package_id');
+            $table->unsignedBigInteger('chef_id')->nullable();
             $table->integer('quantity');
             $table->string('note')->nullable();
             $table->enum('status', ['pending', 'preparing', 'ready', 'served', 'cancelled'])->default('pending');
@@ -18,7 +19,7 @@ return new class extends Migration
 
             // Foreign key constraints
             $table->foreign('order_id')->references('order_id')->on('orders')->onDelete('cascade');
-            $table->foreign('menu_id')->references('menu_id')->on('menus')->onDelete('cascade');
+            $table->foreign('menu_package_id')->references('menu_id')->on('menus')->onDelete('cascade');
         });
     }
 

@@ -21,6 +21,7 @@ class OrderDetailSeeder extends Seeder
                 [
                     'order_id' => $order->order_id,
                     'menu_id' => $mongolianBeef->menu_id,
+                    'chef_id' => 1,
                     'quantity' => 1,
                     'note' => 'Less spicy',
                     'status' => 'pending',
@@ -30,6 +31,7 @@ class OrderDetailSeeder extends Seeder
                 [
                     'order_id' => $order->order_id,
                     'menu_id' => $icedTea->menu_id,
+                    'chef_id' => 2,
                     'quantity' => 1,
                     'note' => null,
                     'status' => 'pending',

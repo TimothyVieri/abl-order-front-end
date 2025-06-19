@@ -13,7 +13,8 @@ class OrderPackage extends Model
 
     protected $fillable = [
         'order_id',
-        'menu_id',
+        'menu_package_id',
+        'chef_id',
         'quantity',
         'note',
         'status',
@@ -32,6 +33,6 @@ class OrderPackage extends Model
      */
     public function menu()
     {
-        return $this->belongsTo(Menu::class, 'menu_id');
+        return $this->belongsTo(Menu::class, 'menu_package_id');
     }
 }
