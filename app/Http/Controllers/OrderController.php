@@ -51,7 +51,7 @@ class OrderController extends Controller
                 ];
             }
 
-            $response = Http::post('http://localhost:8000/orders/create_with_items', $payload);
+            $response = Http::post('http://localhost:8111/orders/create_with_items', $payload);
 
             if ($response->successful() && $response->json('success')) {
                 return back()->with('success', 'Order placed successfully!');
